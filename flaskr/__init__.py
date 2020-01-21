@@ -1,7 +1,7 @@
 import os 
 
 from flask import Flask
-from . import db, auth
+from . import db, auth, blog
 
 
 # Application factor function
@@ -34,6 +34,9 @@ def create_app(test_config=None):
 
     # Register the auth blueprint
     app.register_blueprint(auth.bp)
-    
 
+    app.redgister_blueprint(blog.bp)
+    app.add_url_rule("/", endpoint='index')
+
+    
     return app
