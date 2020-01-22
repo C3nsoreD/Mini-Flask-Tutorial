@@ -1,7 +1,7 @@
 import os 
 
 from flask import Flask
-from . import db, auth, blog
+from . import db, auth, blog, admin
 
 
 # Application factor function
@@ -35,6 +35,7 @@ def create_app(test_config=None):
     # Register the auth blueprint
     app.register_blueprint(auth.bp)
     app.register_blueprint(blog.bp)
+    app.register_blueprint(admin.bp)
 
     app.add_url_rule('/', endpoint='index')
         
