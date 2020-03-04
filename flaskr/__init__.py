@@ -1,7 +1,6 @@
 import os 
-
 from flask import Flask
-from . import db, auth, blog, admin
+from . import db, auth, blog, downloader
 
 
 # Application factory function
@@ -14,7 +13,6 @@ def create_app(test_config=None):
         DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
     )
     # configure flask_admin
-
 
     if test_config is None:
         # load the instance config, if it exists, when not testing
@@ -37,7 +35,7 @@ def create_app(test_config=None):
     # Register the auth blueprint
     app.register_blueprint(auth.bp)
     app.register_blueprint(blog.bp)
-    app.register_blueprint(admin.bp)
+    app.register_blueprint(downloader.bp)
 
     app.add_url_rule('/', endpoint='index')
         

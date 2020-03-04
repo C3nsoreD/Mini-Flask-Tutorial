@@ -5,6 +5,7 @@ HOME/
 .lock
 
 .vscode
+flaskr/
 
 __pycache__/
 .pytest_cache/

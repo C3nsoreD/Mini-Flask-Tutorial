@@ -5,7 +5,7 @@ import pytest
 from flaskr import create_app
 from flaskr.db import get_db, init_db
 
-with open(os.path.join(os.path.dirname(__file__), 'data.spl'), 'rb'):
+with open(os.path.join(os.path.dirname(__file__), 'data.sql'), 'rb') as f:
     _data_sql = f.read().decode('utf8') #Test script
 
 @pytest.fixture
@@ -36,9 +36,11 @@ def runner(app):
 
 
 class AuthActions(object):
-"""
-Defines actions of the authentication model such as (login, logout)
-"""
+    """
+    Defines actions of the authentication model such as (login, logout)
+    Helpful to avoid login repetition when writing tests
+    """
+
     def __init__(self, client):
         self._client = client
     
