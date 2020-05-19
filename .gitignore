@@ -4,9 +4,8 @@
 HOME/
 .lock
 
-.vscode
-flaskr/
+.vscode/settings.json
 
 __pycache__/
 .pytest_cache/
-venv/
+env/
