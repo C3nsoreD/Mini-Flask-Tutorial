@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}New Post{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <body>
+    <div  class="wrapper">
+
+      <form method="post">
+        <p>
+          <label for="title">Title</label>
+          <input name="title" id="title"  class="form-control" value="{{ request.form['title'] }}" required>
+        </p>
+        <p>
+          <label for="body">Body</label>
+          <textarea name="body" class="form-control" id="body">{{ request.form['body'] }}</textarea>
+        </p>
+        <button type="submit" class="btn btn-dark">Save</button>
+      </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+
+body {
+    position: relative;
+    text-align: center;
+  }
+.wrapper {
+    position: relative;
+    text-align: left;
+    margin: auto;
+    padding: 0 10px;
+    width: 800px;
+  }
+h1 {
+    font-size: 28px;
+    line-height: 36px;
+    margin-bottom: 0px;
+    }
